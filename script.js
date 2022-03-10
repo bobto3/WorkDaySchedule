@@ -13,13 +13,13 @@ function displayDay() {
 
 displayDay();
 displayTime();
+setInterval(displayTime, 10000);
 
 //store element text content into variable
 var row9ALabelEl = $("#row9ALabel");
 var timeBlock9 = row9ALabelEl.text;
 var row9ABlockEl = $("#row9ABlock")
 
-//row9ABlockEl.css("background-color", "red");
 console.log(row9ABlockEl);
 
 //compare text content to current time hour
