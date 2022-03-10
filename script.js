@@ -1,28 +1,6 @@
 var currentDayEl = $("#currentDay");
 var currentTimeEl = $("#currentTime");
 
-//store element text content into variable
-var row9ALabelEl = $("#row9ALabel");
-var timeBlock9 = row9ALabelEl.text;
-var row9ABlockEl = $("#row9ABlock")
-
-row9ABlockEl.css("background-color", "red");
-console.log(row9ABlockEl);
-
-//compare text content to current time hour
-// function compareTime() {
-
-//     if (text content = current hour) {
-//         blockTextEl.css("background-color", "red")
-//     }
-//     if (text content < current hour) {
-//         blockTextEl.css("background-color", "gray")
-//     }
-//     if (text content > current hour) {
-//         blockTextEl.css("background-color", "green")
-//     }
-// }
-
 function displayDay() {
     var rightNow = moment().format("dddd MMM Do");
     currentDayEl.text(rightNow);
@@ -33,6 +11,28 @@ function displayDay() {
     currentTimeEl.text(rightNow);
   }
 
-// compareTime();
 displayDay();
 displayTime();
+
+//store element text content into variable
+var row9ALabelEl = $("#row9ALabel");
+var timeBlock9 = row9ALabelEl.text;
+var row9ABlockEl = $("#row9ABlock")
+
+//row9ABlockEl.css("background-color", "red");
+console.log(row9ABlockEl);
+
+//compare text content to current time hour
+function compareTime() {
+    var thisHour = moment().format("h a");
+
+    if (timeBlock9 === thisHour) {
+        row9ABlockEl.css("background-color", "red")
+    } else if (timeBlock9 < thisHour) {
+        row9ABlockEl.css("background-color", "gray")
+    } else if (timeBlock9 > thisHour) {
+        row9ABlockEl.css("background-color", "green")
+    }
+}
+
+compareTime();
